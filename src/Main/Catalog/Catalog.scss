@@ -1,0 +1,56 @@
+.catalog {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @media (max-width: 576px) {
+       justify-content: center;
+    }
+}
+
+.card {
+    margin-bottom: 35px;
+    min-width: 23%;
+}
+
+section {
+    margin-top: 50px;
+}
+
+.section__title {
+    text-align: center;
+    font-size: 48px;
+    font-weight: 700;
+    color: rgba(33, 37, 41, 1);
+    margin-bottom: 35px;
+    padding-top: 35px;
+    text-transform: uppercase;
+
+    @media (max-width: 992px) {
+        font-size: 30px;
+        font-weight: 700;
+    }
+}
+
+.card_img {
+ width: fit-content;
+ height: 50%;
+ align-self: center;
+}
+
+.card {
+    border: none;
+}
+
+.card:hover {
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.16);
+
+}
+
+.card-title {
+    height: 30px;
+}
+
+.card-body a {
+    width: 100%;
+}

@@ -1,0 +1,27 @@
+.bigCan {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bigCan p {
+    width: 45%;
+    line-height: 25px;
+}
+
+@media (max-width: 800px) {
+    .bigCan {
+        flex-direction: column;
+        align-items: center;
+       }
+    
+       .bigCan img{
+        height: 400px;
+        width: fit-content;
+        margin-bottom: 50px;
+       }
+    
+       .bigCan p{
+        width: 100%;;
+       }
+    
+}
