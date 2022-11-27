@@ -1,95 +1,174 @@
 import React from "react";
+import { Container, Button, Form } from "react-bootstrap";
+import { useFormik } from "formik";
 
 import './Form.scss';
 
-const Form = () => {
+const FormEl = () => {
+  const formik = useFormik({
+    initialValues: {
+      username: '',
+      email: '',
+      tel: '',
+      quantity: '',
+      prod: [],
+      message: '',
+    },
+    onSubmit: async (values) => {
+      console.log(values);
+      try {
+        const res = await fetch('sendmail.php', {
+          method: 'POST',
+          body: values
+        })
+        console.log(res);
+      } catch (err) {
+        console.log(err)
+      }
+    }
+  })
     return (
         <section id="form">
-      <div class="container">
+      <Container>
         <h2 class="section__title">ГОТОВЫ СДЕЛАТЬ ЗАКАЗ?</h2>
         <p class="text-center">Заполните форму, укажите желаемое количество товара, при необходимости напишите
           комментарий.<br /> Мы свяжемся с
           вами в ближайшее время!</p>
         <div class="form">
-          <form action="#" id="form" class="form__body">
+          <Form onSubmit={formik.handleSubmit} id="form" class="form__body">
             <h1 class="form__title text-uppercase text-center">
               форма заказа
             </h1>
             <div class="form__item">
-              <div class="options">
-                <div class="options__item">
-                  <input id="-10" checked type="radio" value="Канистра ПЭТ -10 5L" name="type" class="options__input" />
-                  <label for="-10" class="options__label"><span>Канистра ПЭТ -10 5L</span></label>
-                </div>
-                <div class="options__item">
-                  <input id="-20" type="radio" value="Канистра ПЭТ -20 5L" name="type" class="options__input" />
-                  <label for="-20" class="options__label"><span>Канистра ПЭТ -20 5L</span></label>
-                </div>
-                <div class="options__item">
-                  <input id="-25" type="radio" value="Канистра ПЭТ -25 5L" name="type" class="options__input" />
-                  <label for="-25" class="options__label"><span>Канистра ПЭТ -25 5L</span></label>
-                </div>
-                <div class="options__item">
-                  <input id="-30" type="radio" value="Канистра ПЭТ -30 5L" name="type" class="options__input" />
-                  <label for="-30" class="options__label"><span>Канистра ПЭТ -30 5L</span></label>
-                </div>
-                <div class="options__item">
-                  <input id="-35" type="radio" value="Канистра ПЭТ -35 5L" name="type" class="options__input" />
-                  <label for="-35" class="options__label"><span>Канистра ПЭТ -35 5L</span></label>
-                </div>
-                <div class="options__item">
-                  <input id="nord25" type="radio" value="Nord Stream -25 5L" name="type" class="options__input" />
-                  <label for="nord25" class="options__label"><span>Nord Stream -25 5L</span></label>
-                </div>
-                <div class="options__item">
-                  <input id="arctic30" type="radio" value="female" name="type" class="options__input" />
-                  <label for="arctic30" class="options__label"><span>Arctic Formula -30 5L</span></label>
-                </div>
-                <div class="options__item">
-                  <input id="summer" type="radio" value="female" name="type" class="options__input" />
-                  <label for="summer" class="options__label"><span>Летняя Мухомой 5л</span></label>
-                </div>
-                <div class="options__item">
-                  <input id="hubba" type="radio" value="female" name="type" class="options__input" />
-                  <label for="hubba" class="options__label"><span>Летняя Hubba Bubba 5л</span></label>
-                </div>
-              </div>
+              <Form.Group class="options">
+                  <Form.Check
+                   id="Канистра ПЭТ -10°С 5л"
+                   type="radio"
+                   value="Канистра ПЭТ -10 5L" 
+                   name="prod" 
+                   class="options__input"
+                   label={"Канистра ПЭТ -10 5L"} />
+                       <Form.Check
+                   id="Канистра ПЭТ -10°С 5л"
+                   type="radio"
+                   value="Канистра ПЭТ -10°С 5л" 
+                   name="prod" 
+                   class="options__input"
+                   label={"Канистра ПЭТ -10°С 5л"} />
+                       <Form.Check
+                   id="-10"
+                   type="radio"
+                   value="Канистра ПЭТ -10 5L" 
+                   name="prod" 
+                   class="options__input"
+                   label={"Канистра ПЭТ -10 5L"} />
+                       <Form.Check
+                   id="-10"
+                   type="radio"
+                   value="Канистра ПЭТ -10 5L" 
+                   name="prod" 
+                   class="options__input"
+                   label={"Канистра ПЭТ -10 5L"} />
+                       <Form.Check
+                   id="-10"
+                   type="radio"
+                   value="Канистра ПЭТ -10 5L" 
+                   name="prod" 
+                   class="options__input"
+                   label={"Канистра ПЭТ -10 5L"} />
+                       <Form.Check
+                   id="-10"
+                   type="radio"
+                   value="Канистра ПЭТ -10 5L" 
+                   name="prod" 
+                   class="options__input"
+                   label={"Канистра ПЭТ -10 5L"} />
+                       <Form.Check
+                   id="-10"
+                   type="radio"
+                   value="Канистра ПЭТ -10 5L" 
+                   name="prod" 
+                   class="options__input"
+                   label={"Канистра ПЭТ -10 5L"} />
+                       <Form.Check
+                   id="-10"
+                   type="radio"
+                   value="Канистра ПЭТ -10 5L" 
+                   name="prod" 
+                   class="options__input"
+                   label={"Канистра ПЭТ -10 5L"} />
+                       <Form.Check
+                   id="-10"
+                   type="radio"
+                   value="Канистра ПЭТ -10 5L" 
+                   name="prod" 
+                   class="options__input"
+                   label={"Канистра ПЭТ -10 5L"} />
+                       <Form.Check
+                   id="-10"
+                   type="radio"
+                   value="Канистра ПЭТ -10 5L" 
+                   name="prod" 
+                   class="options__input"
+                   label={"Канистра ПЭТ -10 5L"} />
+              </Form.Group>
             </div>
-            <div class="form__item">
-              <label for="formName" class="form__label">Имя*:</label>
-              <input id="formName" type="text" class="form__input _req" name="name" />
-            </div>
-            <div class="form__item">
-              <label for="formPhone" class="form__label">Телефон*:</label>
-              <input id="formPhone" type="text" class="form__input _req _email" name="phone" />
-            </div>
-            <div class="form__item">
-              <label for="formEmail" class="form__label">E-mail*:</label>
-              <input id="formEmail" type="text" class="form__input _req _email" name="email" />
-            </div>
-            <div class="form__item">
-              <label for="formQuantity" class="form__label">Количество:</label>
-              <input id="formQuantity" type="text" class="form__input _req _quantity" name="quantity" />
-            </div>
+            <Form.Group class="form__item">
+              <Form.Label htmlFor="username" class="form__label">Имя*:</Form.Label>
+              <Form.Control
+              onChange={formik.handleChange}
+              value={formik.values.username}
+               id="username"
+               name="username"
+               required
+                class="form__input _req"  />
+            </Form.Group>
+            <Form.Group class="form__item">
+              <Form.Label htmlFor="tel" class="form__label">Телефон*:</Form.Label>
+              <Form.Control
+              onChange={formik.handleChange}
+              value={formik.values.tel}
+               id="tel"
+               name="tel"
+               required
+               class="form__input _req _email"  />
+            </Form.Group>
+            <Form.Group class="form__item">
+              <Form.Label htmlFor="email" class="form__label">E-mail*:</Form.Label>
+              <Form.Control
+              onChange={formik.handleChange}
+              value={formik.values.email}
+              required
+               id="email"
+               name="email"
+               class="form__input _req _email"  />
+            </Form.Group>
+            <Form.Group class="form__item">
+              <Form.Label htmlFor="formQuantity" class="form__label">Количество:</Form.Label>
+              <Form.Control
+              onChange={formik.handleChange}
+              value={formik.values.quantity}
+              id="quantity"
+              name="quantity"
+              required
+              class="form__input _req _quantity" />
+            </Form.Group>
 
-            <div class="form__item">
-              <label for="formMessage" class="form__label">Сообщение:</label>
-              <textarea name="message" class="form__input" id="formMessage"></textarea>
-            </div>
-
-            <div class="form__item">
-              <div class="checkbox">
-                <input id="formAgreement" checked type="checkbox" name="agreement" class="checkbox__input _req" />
-                <label for="formAgreement" class="checkbox__label"><span>Я даю согласие на обработку персональных данных
-                    в соответствии с <a href="#">Условиями</a></span></label>
-              </div>
-            </div>
-            <button class="form__button btn btn-primary fw-bold" type="submit">Отправить</button>
-          </form>
+            <Form.Group class="form__item">
+              <Form.Label htmlFor="message" class="form__label">Сообщение:</Form.Label>
+              <Form.Control
+              onChange={formik.handleChange}
+              value={formik.values.message}
+               name="message"
+                class="form__input"
+                 id="message" />
+            </Form.Group>
+            <Button class="form__button btn btn-primary fw-bold" type="submit">Отправить</Button>
+          </Form>
         </div>
-      </div>
+      </Container>
     </section>
     )
 };
 
-export default Form;
+export default FormEl;

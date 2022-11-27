@@ -1,11 +1,12 @@
 import React from "react";
+import { Container } from "react-bootstrap";
 
 import './Prices.scss';
 
 const Prices = () => {
     return (
-        <section id="prices">
-      <div className="container">
+      <section id="prices">
+      <Container>
         <h2 className="section__title text-uppercase">СТЕКЛООМЫВАТЕЛЬ ЗА БЕЗНАЛИЧНЫЙ РАСЧЕТ</h2>
         <div className="prices__table">
           <h3 className="prices__table_title">НЕЗАМЕРЗАЙКА ПЭТ КАНИСТРА 5Л</h3>
@@ -128,7 +129,7 @@ const Prices = () => {
             </tbody>
           </table>
         </div>
-      </div>
+      </Container>
     </section>
     )
 };

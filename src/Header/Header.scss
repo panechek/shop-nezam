@@ -1,7 +1,53 @@
-.width-1200 {
-    max-width: 1200px;
-  }
-  
   .header {
     min-height: 150px;
   }
+
+.header__logo {
+    height: 70px;
+  }
+
+.header__text {
+    font-size: 14px;
+  }
+  @media (min-width: 576px) {
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .navbar .container {
+    align-items: end;
+  }
+  .header__logo {
+    height: 140px;
+  }
+  .header__text {
+    font-size: 20px;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (max-width: 992px) {
+  .navRow {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .navbar-toggler {
+    align-self: center;
+  }
+}
+
+@media (min-width: 992px) {
+  
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  // .navbar .container {
+  //   align-items: end;
+  // }
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) {
+}

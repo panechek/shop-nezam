@@ -1,4 +1,5 @@
 import React from "react";
+import { Container } from "react-bootstrap";
 
 import './Settings.scss';
 
@@ -6,7 +7,7 @@ const Settings = () => {
     return (
         <section id="settings">
         <article className="bg-primary">
-          <div className="container info">
+          <Container className="info">
             <h2 className="section__title text-white">наши преимущества</h2>
             <div className="info__list">
               <div className="info__item">
@@ -47,10 +48,10 @@ const Settings = () => {
                 </p>
               </div>
               </div>
-              </div>
+              </Container>
         </article>
         <article>
-          <div className="container info">
+          <Container className="info">
             <h2 className="section__title">условия работы</h2>
             <div className="info__list">
               <div className="info__item">
@@ -91,7 +92,7 @@ const Settings = () => {
                 </p>
               </div>
               </div>
-              </div>
+              </Container>
         </article>
       </section>
     )
