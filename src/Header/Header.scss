@@ -1,5 +1,6 @@
   .header {
     min-height: 150px;
+    position: relative;
   }
 
 .header__logo {
@@ -8,7 +9,40 @@
 
 .header__text {
     font-size: 14px;
-  }
+}
+
+.header__cart {
+  -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    height: 60px;
+    width: 60px;
+    border-radius: 36px;
+    position: relative;
+
+    & svg {
+      top: 10px;
+      left: 12px;
+    }
+}
+
+.header__buttongroup {
+  width: 130px;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  right: 18px;
+  bottom: 60px;
+}
+
+.header__buttonConnect {
+  position: absolute;
+  right: 88px;
+  bottom: 60px;
+  display: flex;
+  width: 210px;
+  justify-content: space-between;
+}
+
   @media (min-width: 576px) {
 }
 
@@ -21,7 +55,7 @@
     height: 140px;
   }
   .header__text {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 
@@ -34,6 +68,26 @@
 
   .navbar-toggler {
     align-self: center;
+  }
+
+  .header__buttongroup {
+    width: 100%;
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+  }
+
+  .header__cart {
+    width: 50%;
+    border-radius: 0px;
+  }
+
+  .header__buttonConnect {
+    position: fixed;
+    bottom: 0px;
+    right: 0;
+    left: 0;
+    z-index: 2000;
   }
 }
 

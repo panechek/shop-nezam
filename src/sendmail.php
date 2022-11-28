@@ -4,7 +4,7 @@ require 'phpmailer/PHPMailer.php';
 require 'phpmailer/Exception.php';
 
 $mail = new PHPMailer\PHPMailer\PHPMailer();
-echo "<script>console.log('{$_POST}' );</script>";
+
 $name = $_POST['username'];
 $email = $_POST['email'];
 $tel = $_POST['tel'];

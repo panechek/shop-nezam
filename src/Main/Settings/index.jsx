@@ -24,7 +24,7 @@ const Settings = () => {
               </div>
               <div className="info__item">
                 <div className="info__icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="grey" class="bi bi-briefcase-fill" viewBox="0 0 16 16">
+                <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="grey" className="bi bi-briefcase-fill" viewBox="0 0 16 16">
   <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5z"/>
   <path d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85v5.65z"/>
 </svg>
@@ -35,14 +35,13 @@ const Settings = () => {
               </div>
               <div className="info__item">
                 <div className="info__icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="grey" class="bi bi-thermometer-half" viewBox="0 0 16 16">
+                <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="grey" className="bi bi-thermometer-half" viewBox="0 0 16 16">
   <path d="M9.5 12.5a1.5 1.5 0 1 1-2-1.415V6.5a.5.5 0 0 1 1 0v4.585a1.5 1.5 0 0 1 1 1.415z"/>
   <path d="M5.5 2.5a2.5 2.5 0 0 1 5 0v7.55a3.5 3.5 0 1 1-5 0V2.5zM8 1a1.5 1.5 0 0 0-1.5 1.5v7.987l-.167.15a2.5 2.5 0 1 0 3.333 0l-.166-.15V2.5A1.5 1.5 0 0 0 8 1z"/>
 </svg>
                 </div>
                 <p className="info__text">
-                  Каждая партия продукции измеряется спиртометром, показания предоставляются покупателю в случае
-                  необходимости
+                  Каждая партия продукции измеряется спиртометром, показания предоставляются покупателю в случае необходимости
                 </p>
               </div>
               </div>
@@ -73,7 +72,7 @@ const Settings = () => {
                   </svg>
                 </div>
                 <p className="info__text  text-secondary">
-                  Доставка по Москве осуществляется бесплатно. Ближайшая дата доставки согласовывается с менеджером
+                  Доставка по Москве осуществляется бесплатно. Доставка по Московской области обсуждается индивидуально. Ближайшая дата доставки согласовывается с менеджером
                 </p>
               </div>
               <div className="info__item">

@@ -9,7 +9,7 @@ import './Banner.scss';
 
 const Banner = () => {
     return (
-      <Carousel>
+      <Carousel id="about">
         <Carousel.Item>
             <img
             className="d-block w-100 opacity-50 banner__img"
@@ -18,7 +18,7 @@ const Banner = () => {
             />
             <Carousel.Caption className="text-dark">
             <h3>Бесплатная доставка</h3>
-            <p>Незамерзайка оптом с доставкой по Москве от 50 шт.</p>
+            <p>Незамерзайка оптом с доставкой по Москве и Московской области от 50 шт.</p>
             </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
