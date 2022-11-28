@@ -1,6 +1,8 @@
 import React from "react";
 import { Container, Button, Form } from "react-bootstrap";
 import { useFormik } from "formik";
+import products from '../../assets/products.js'
+
 
 import './Form.scss';
 
@@ -11,16 +13,19 @@ const FormEl = () => {
       email: '',
       tel: '',
       quantity: '',
-      prod: [],
+      prod: '',
       message: '',
     },
     onSubmit: async (values) => {
-      console.log(values);
       try {
         const res = await fetch('sendmail.php', {
           method: 'POST',
-          body: values
+          body: values,
+          headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+          }
         })
+        formik.resetForm();
         console.log(res);
       } catch (err) {
         console.log(err)
@@ -41,76 +46,15 @@ const FormEl = () => {
             </h1>
             <div class="form__item">
               <Form.Group class="options">
-                  <Form.Check
-                   id="Канистра ПЭТ -10°С 5л"
+                {products.map((item) => (
+                   <Form.Check
+                   id={item.name}
                    type="radio"
-                   value="Канистра ПЭТ -10 5L" 
+                   value={item.name} 
                    name="prod" 
                    class="options__input"
-                   label={"Канистра ПЭТ -10 5L"} />
-                       <Form.Check
-                   id="Канистра ПЭТ -10°С 5л"
-                   type="radio"
-                   value="Канистра ПЭТ -10°С 5л" 
-                   name="prod" 
-                   class="options__input"
-                   label={"Канистра ПЭТ -10°С 5л"} />
-                       <Form.Check
-                   id="-10"
-                   type="radio"
-                   value="Канистра ПЭТ -10 5L" 
-                   name="prod" 
-                   class="options__input"
-                   label={"Канистра ПЭТ -10 5L"} />
-                       <Form.Check
-                   id="-10"
-                   type="radio"
-                   value="Канистра ПЭТ -10 5L" 
-                   name="prod" 
-                   class="options__input"
-                   label={"Канистра ПЭТ -10 5L"} />
-                       <Form.Check
-                   id="-10"
-                   type="radio"
-                   value="Канистра ПЭТ -10 5L" 
-                   name="prod" 
-                   class="options__input"
-                   label={"Канистра ПЭТ -10 5L"} />
-                       <Form.Check
-                   id="-10"
-                   type="radio"
-                   value="Канистра ПЭТ -10 5L" 
-                   name="prod" 
-                   class="options__input"
-                   label={"Канистра ПЭТ -10 5L"} />
-                       <Form.Check
-                   id="-10"
-                   type="radio"
-                   value="Канистра ПЭТ -10 5L" 
-                   name="prod" 
-                   class="options__input"
-                   label={"Канистра ПЭТ -10 5L"} />
-                       <Form.Check
-                   id="-10"
-                   type="radio"
-                   value="Канистра ПЭТ -10 5L" 
-                   name="prod" 
-                   class="options__input"
-                   label={"Канистра ПЭТ -10 5L"} />
-                       <Form.Check
-                   id="-10"
-                   type="radio"
-                   value="Канистра ПЭТ -10 5L" 
-                   name="prod" 
-                   class="options__input"
-                   label={"Канистра ПЭТ -10 5L"} />
-                       <Form.Check
-                   id="-10"
-                   type="radio"
-                   value="Канистра ПЭТ -10 5L" 
-                   name="prod" 
-                   class="options__input"
-                   label={"Канистра ПЭТ -10 5L"} />
+                   label={item.name} />
+                ))}
               </Form.Group>
             </div>
             <Form.Group class="form__item">
