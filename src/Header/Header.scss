@@ -3,6 +3,15 @@
     position: relative;
   }
 
+  @keyframes skew-y-shakeing{
+    0% { transform: skewY(-15deg); }
+    5% { transform: skewY(15deg); }
+    10% { transform: skewY(-15deg); }
+    15% { transform: skewY(15deg); }
+    20% { transform: skewY(0deg); }
+    100% { transform: skewY(0deg); }
+   }
+
 .header__logo {
     height: 70px;
   }
@@ -22,25 +31,31 @@
     & svg {
       top: 10px;
       left: 12px;
+      // -webkit-transform: scaleX(-1);
+      // transform: scaleX(-1);
     }
 }
 
-.header__buttongroup {
-  width: 130px;
-  display: flex;
-  justify-content: space-between;
+.hidden {
+  display: none;
+}
+
+.openButtonGroup {
   position: absolute;
   right: 18px;
   bottom: 60px;
+  box-shadow: 1px 4px 20px #646464;
+  // animation: skew-y-shakeing 1.3s infinite;
 }
 
 .header__buttonConnect {
   position: absolute;
-  right: 88px;
+  right: 18px;
   bottom: 60px;
   display: flex;
-  width: 210px;
   justify-content: space-between;
+  width: 300px;
+  transition: 1s;
 }
 
   @media (min-width: 576px) {
@@ -70,38 +85,33 @@
     align-self: center;
   }
 
-  .header__buttongroup {
-    width: 100%;
+  .openButtonGroup {
     position: fixed;
-    right: 0px;
-    bottom: 0px;
-  }
-
-  .header__cart {
-    width: 50%;
-    border-radius: 0px;
+    right: 18px;
+    bottom: 10px;
   }
 
   .header__buttonConnect {
     position: fixed;
-    bottom: 0px;
-    right: 0;
-    left: 0;
     z-index: 2000;
+    flex-direction: column;
+    right: 18px;
+    bottom: 10px;
+    width: fit-content;
+    height: 300px;
   }
 }
 
-@media (min-width: 992px) {
-  
+.bg-telegram {
+  background-color: #2AABEE;
 }
 
-// X-Large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-  // .navbar .container {
-  //   align-items: end;
-  // }
+.bg-phone {
+  background-color: grey;
 }
 
-// XX-Large devices (larger desktops, 1400px and up)
-@media (min-width: 1400px) {
+
+.bg-whatsUp {
+  background-color: #25D366;
 }
+

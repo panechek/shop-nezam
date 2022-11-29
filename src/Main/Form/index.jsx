@@ -1,10 +1,13 @@
 import React from "react";
 import { Container, Button, Form } from "react-bootstrap";
 import { useFormik } from "formik";
-import products from '../../assets/products.js'
+import products from '../../assets/products.js';
+// import * as Yup from 'yup';
 
 
 import './Form.scss';
+
+
 
 const FormEl = () => {
   const formik = useFormik({
@@ -18,14 +21,13 @@ const FormEl = () => {
     },
     onSubmit: async (values) => {
       const formData = new FormData();
-
-      formData.append('name', formik.username);
-      formData.append('email', formik.email);
-      formData.append('tel', formik.tel);
-      formData.append('quantity', formik.quantity);
-      formData.append('prod', formik.prod);
-      formData.append('message', formik.message);
-      
+      formData.append('name', values.username);
+      formData.append('email', values.email);
+      formData.append('tel', values.tel);
+      formData.append('quantity', values.quantity);
+      formData.append('prod', values.prod);
+      formData.append('message', values.message);
+      console.log(formData);
       try {
         const res = await fetch('sendmail.php', {
           method: 'POST',
