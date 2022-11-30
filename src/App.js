@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.scss';
+import products from './assets/products.js';
 
 import Header from './Header/index.jsx';
 import Main from './Main';
@@ -10,7 +11,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Main />
+      <Main products={products}/>
       <Footer />
     </div>
   );

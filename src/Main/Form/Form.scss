@@ -1,3 +1,7 @@
+.form * {
+    outline: none;
+}
+
 .form {
     width: 550px;
     margin: 0 auto;
@@ -7,10 +11,6 @@
     background-color: #e2e3e5;
     box-shadow: 1px 4px 20px #646464;
     border-radius: 1%;
-}
-
-.form * {
-    outline: none;
 }
 
 .form__title {
@@ -49,4 +49,26 @@
     .form {
         width: 80%;
        }
+}
+
+.form__prod {
+    display: flex;
+    background: #ffffff;
+    align-items: center;
+    height: 80px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 0 10px;
+    margin-bottom: 10px;
+
+    & img {
+        height: 60px;
+        margin-right: 20px;
+    }
+}
+
+.input-group {
+    & input {
+        text-align: center;
+    }
 }
