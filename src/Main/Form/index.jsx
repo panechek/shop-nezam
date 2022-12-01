@@ -40,15 +40,18 @@ const FormEl = ({ handleDelete, countProducts, setCountProducts }) => {
     // validationSchema: orderSchema,
     onSubmit: async (values) => {
       const formData = new FormData();
-      Object.entries(values).forEach(({key, value}) => {
-        if (value !=='') {
-          formData.append(key, value);
+      Object.entries(values).forEach((key, value) => {
+        const notProducts = ['username', 'email', 'tel', 'message'];
+        const [name, data] = key
+        if (data !=='' && !notProducts.includes(name)) {
+          formData.append('product', `${name} - ${data} шт.`);
+          console.log(formData.getAll('product'));
         }
       })
-      // formData.append('name', values.username);
-      // formData.append('email', values.email);
-      // formData.append('tel', values.tel);
-      // formData.append('message', values.message);
+      formData.append('name', values.username);
+      formData.append('email', values.email);
+      formData.append('tel', values.tel);
+      formData.append('message', values.message);
       setCountProducts([]);
       try {
         const res = await fetch('sendmail.php', {
