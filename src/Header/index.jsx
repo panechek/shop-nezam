@@ -19,7 +19,7 @@ const Header = () => {
     }
   );
 
-  const classButtonOpen = cn('btn', 'btn-secondary', 'header__cart', 'openButtonGroup', {
+  const classButtonOpen = cn('btn', 'btn-secondary', 'header__button', 'openButtonGroup', {
     "visually-hidden": !connectionOn,
   })
 
@@ -34,7 +34,7 @@ const Header = () => {
           </Navbar.Brand>
           <div className={classOfBtnConnection}>
             {buttons.map(item => (
-              item.name === 'close' ? <button type="button" onClick={switchConnection} key={item.id} className="btn header__cart">{item.icon}</button> : <a href={item.address} key={item.id} className={`btn header__cart bg-${item.name}`} style={{backgroungColor: item.color}}>{item.icon}</a>)
+              item.name === 'close' ? <button type="button" onClick={switchConnection} key={item.id} className="btn header__button header__button_notBorder">{item.icon}</button> : <a href={item.address} key={item.id} className={`btn header__button bg-${item.name}`} style={{backgroungColor: item.color}}>{item.icon}</a>)
             )}
            </div>
           
