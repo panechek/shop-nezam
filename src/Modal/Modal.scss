@@ -1,0 +1,67 @@
+.modals {
+    position: fixed;
+    height: 30vh;
+    width: 50vw;
+    background-color: rgb(73, 73, 194);
+    z-index: 1500;
+    top: 35%;
+    left: 25%;
+    border-radius: 10px;
+    box-shadow: 5px 15px 20px #474747;
+    @media (max-width: 992px) {
+        width: 80vw;
+        top: 20%;
+        left: 10%;
+    }
+
+    div {
+        position: relative;
+        padding: 10%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    &__close {
+        position: absolute;
+        border: none;
+        background: none;
+        right: 10px;
+        top: 10px;
+    }
+
+    &__title {
+        font-size: 24px;
+
+        @media (max-width: 992px) {
+           margin-top: 30px;
+        }
+    }
+
+    &__button {
+        margin-top: 60px;
+        padding: 20px 60px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        font-weight: 700;
+        color: #474747;
+        cursor: pointer;
+        text-align: center;
+
+        &:hover {
+            background-color: #f3f2f2;
+        }
+
+        @media (max-width: 992px) {
+            font-size: 14px;
+            padding: auto;
+            width: 90%;
+            padding: 20px;
+        }
+
+        @media (max-width: 500px) {
+            font-size: 10px;
+        }
+    }
+}

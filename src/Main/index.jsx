@@ -9,7 +9,7 @@ import Bigcan from './Bigcan';
 
 import './Main.scss';
 
-const Main = ({ products }) => {
+const Main = ({ discount }) => {
     const [countProducts, setCountProducts] = useState([]);
     const handleAdd = (id) => setCountProducts([...countProducts, id]);
 
@@ -27,12 +27,14 @@ const Main = ({ products }) => {
                 handleDelete={handleDelete}
                 countProducts={countProducts}
             />
+            <Settings title="Наши преимущества" type="benefits" />
             <Form
-             handleDelete={handleDelete}
-             countProducts={countProducts}
-             setCountProducts={setCountProducts}
+                handleDelete={handleDelete}
+                countProducts={countProducts}
+                setCountProducts={setCountProducts}
+                discount={discount}
             />
-            <Settings />
+            <Settings title="Условия работы" type="settings" />
             <Bigcan />
         </div>
     )

@@ -62,7 +62,7 @@ const products = [
         price4: 190,
         price5: 195,
 
-        img: require(`./item6.png`)
+        img: require(`./item7.png`)
     },
     {
         id: 7,
@@ -72,7 +72,7 @@ const products = [
         price3: 175,
         price4: 180,
         price5: 185,
-        img: require(`./item7.png`)
+        img: require(`./item6.png`)
     },
     {
         id: 8,

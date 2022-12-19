@@ -1,12 +1,13 @@
 .bigCan {
     display: flex;
     justify-content: space-between;
+    div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 }
 
-.bigCan p {
-    width: 45%;
-    line-height: 25px;
-}
 
 .bigCan img{
     height: fit-content;

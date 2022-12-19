@@ -11,20 +11,26 @@ import './Form.scss';
 
 
 
-const FormEl = ({ handleDelete, countProducts, setCountProducts }) => {
-  const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
+const FormEl = ({ handleDelete, countProducts, setCountProducts, discount }) => {
+  const phoneRegExp = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/;
   const orderSchema = Yup.object().shape({
     username: Yup.string()
-      .min(2, 'Слишком короткое')
-      .max(50, 'Слишком длинное')
+      .min(2, 'Слишком короткое имя')
+      .max(50, 'Слишком длинное имя')
       .required('Заполните поле'),
     tel: Yup.string()
       .required("Заполните поле")
-      .matches(phoneRegExp, 'Неверный телефонный номер')
-      .min(10, "Слишком короткий номер")
-      .max(10, "Слишком длинный номер"),
-    email: Yup.string().email('Введите верный адрес почты').required('Заполните поле'),
-    "Канистра ПЭТ -10°С 5л": Yup.number().required('Введите количество').min(50, 'Минимальный заказ от 50 шт')
+      .matches(phoneRegExp, 'Неверный формат телефонного номера'),
+    email: Yup.string().email('Неверный формат почты').required('Заполните поле'),
+    // "Канистра ПЭТ -10°С 5л": Yup.number().required('Введите количество').min(50, 'Минимальный заказ от 50 шт'),
+    // "Канистра ПЭТ -20°C 5л": Yup.number().required('Введите количество').min(50, 'Минимальный заказ от 50 шт'),
+    // "Канистра ПЭТ -25°C 5л": Yup.number().required('Введите количество').min(50, 'Минимальный заказ от 50 шт'),
+    // "Канистра ПЭТ -30°C 5л": Yup.number().required('Введите количество').min(50, 'Минимальный заказ от 50 шт'),
+    // "Канистра ПЭТ -35°C 5л": Yup.number().required('Введите количество').min(50, 'Минимальный заказ от 50 шт'),
+    // "ARCTIC FORMULA -30°C": Yup.number().required('Введите количество').min(50, 'Минимальный заказ от 50 шт'),
+    // "POLAR STREAM -25°C": Yup.number().required('Введите количество').min(50, 'Минимальный заказ от 50 шт'),
+    // "Летняя Hubba Bubba 5л": Yup.number().required('Введите количество').min(50, 'Минимальный заказ от 50 шт'),
+    // "Летняя Мухомой 5л": Yup.number().required('Введите количество').min(50, 'Минимальный заказ от 50 шт'),
   });
 
   const makeInitialValue = () => {
@@ -32,7 +38,7 @@ const FormEl = ({ handleDelete, countProducts, setCountProducts }) => {
       username: '',
       email: '',
       tel: '',
-      message: '',
+      message: discount ? discount : '',
     };
     products.forEach((item) => initialValue[item.name] = '');
     return initialValue
@@ -104,9 +110,10 @@ const FormEl = ({ handleDelete, countProducts, setCountProducts }) => {
               </div>
              
             </Form.Group>
-             {formik.touched[item.name] && formik.errors[item.name] ? (
+             {/* {formik.touched[item.name] && formik.errors[item.name] ? (
          <div className="invalidfeedback">{formik.errors[item.name]}</div>
-        ) : null }
+        ) : null } */}
+        <p>Минимальное количество 50 шт.</p>
             </div>
             )
           )}
@@ -119,7 +126,7 @@ const FormEl = ({ handleDelete, countProducts, setCountProducts }) => {
               name="username"
               className={(formik.touched.username && formik.errors.username) ? 'form-control is-invalid form__input' : 'form-control form__input'} />
                  {formik.touched.username && formik.errors.username ? (
-         <div className="invalid-feedback">{formik.errors.username}</div>
+         <div>{formik.errors.username}</div>
         ) : null }
             </Form.Group>
          
@@ -132,7 +139,7 @@ const FormEl = ({ handleDelete, countProducts, setCountProducts }) => {
               name="tel"
               className={(formik.touched.tel && formik.errors.tel) ? 'form-control is-invalid form__input' : 'form-control form__input'} />
               {formik.touched.tel && formik.errors.tel ? (
-         <div className="invalid-feedback">{formik.errors.tel}</div>
+         <div>{formik.errors.tel}</div>
         ) : null }
           </Form.Group>
           <Form.Group className="form__item has-validation">
@@ -144,7 +151,7 @@ const FormEl = ({ handleDelete, countProducts, setCountProducts }) => {
               name="email"
               className={(formik.touched.email && formik.errors.email) ? 'form-control is-invalid form__input' : 'form-control form__input'} />
               {formik.touched.email && formik.errors.email ? (
-         <div className="invalid-feedback">{formik.errors.email}</div>
+         <div>{formik.errors.email}</div>
         ) : null }
           </Form.Group>
           <Form.Group className="form__item">

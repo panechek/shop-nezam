@@ -11,31 +11,19 @@
 .card {
     margin-bottom: 35px;
     min-width: 23%;
-}
 
-section {
-    margin-top: 50px;
-}
-
-.section__title {
-    text-align: center;
-    font-size: 48px;
-    font-weight: 700;
-    color: rgb(70, 72, 74);
-    margin-bottom: 35px;
-    padding-top: 35px;
-    text-transform: uppercase;
-
-    @media (max-width: 992px) {
-        font-size: 30px;
-        font-weight: 700;
-    }
+    @media (max-width: 576px) {
+        width: 48%;
+     }
 }
 
 .card_img {
  width: fit-content;
  height: 50%;
  align-self: center;
+ @media (max-width: 576px) {
+    height: 100px;
+ }
 }
 
 .card {
@@ -49,17 +37,21 @@ section {
 
 .card-title {
     height: 30px;
+
+    @media (max-width: 576px) {
+        height: fit-content;
+        font-size: 14px;
+     }
 }
 
 .card-body a {
     width: 100%;
 }
 
-.deleteProd {
-    position: inherit;
-}
-
 .btn-buy{
     width: 100%;
+    @media (max-width: 576px) {
+        font-size: 14px;
+     }
     // transition: all 5s ease;
 }

@@ -1,6 +1,6 @@
 .info {
-    padding-top: 70px;
-    padding-bottom: 70px;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
 .info__list {
@@ -21,15 +21,20 @@
 
 .info__item {
     width: 30%;
-    
-}
-
+    @media (max-width: 700px) {
+        &:not(:last-of-type) {
+            margin-bottom: 40px;
+          }
+        }
 svg {
     position: absolute;
     top: 36px;
     left: 38px;
-    
 }
+
+}
+
+
 
 .info__text {
     text-align: center;
@@ -47,6 +52,5 @@ svg {
 
        .info__item {
         width: 100%;
-        
     }
 }

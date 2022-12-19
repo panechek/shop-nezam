@@ -1,123 +1,131 @@
-  .header {
-    min-height: 150px;
-    position: relative;
-  }
-
-  @keyframes skew-y-shakeing{
-    0% { transform: skewY(-15deg); }
-    5% { transform: skewY(15deg); }
-    10% { transform: skewY(-15deg); }
-    15% { transform: skewY(15deg); }
-    20% { transform: skewY(0deg); }
-    100% { transform: skewY(0deg); }
-   }
+.header {
+  min-height: 150px;
+  position: relative;
+}
 
 .header__logo {
-    height: 70px;
-  }
+  height: 70px;
+}
 
 .header__text {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 .header__button {
-  height: 60px;
-  width: 60px;
-  border-radius: 36px;
-  position: relative;
-  border: 3px solid #fff;
+height: 60px;
+width: 60px;
+border-radius: 36px;
+position: relative;
+border: 3px solid #fff;
 
-  & svg {
-    top: 12px;
-    left: 10px;
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
-  }
+& svg {
+  top: 13px;
+  left: 13px;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
 
-  &_notBorder {
-    border: none;
-  }
+&_notBorder {
+  border: none;
+}
 }
 
 .hidden {
-  display: none;
+display: none;
 }
 
 .openButtonGroup {
-  position: absolute;
-  right: 18px;
-  bottom: 60px;
-  box-shadow: 1px 4px 20px #fafafb;
-  
-  // animation: skew-y-shakeing 1.3s infinite;
+position: absolute;
+right: 18px;
+bottom: 60px;
+box-shadow: 1px 4px 20px #fafafb;
+
 }
 
 .header__buttonConnect {
-  position: absolute;
-  right: 18px;
-  bottom: 60px;
-  display: flex;
-  justify-content: space-between;
-  width: 300px;
+position: absolute;
+right: 18px;
+bottom: 60px;
+display: flex;
+justify-content: space-between;
+width: 300px;
 }
 
-  @media (max-width: 576px) {
-    .header__text {
-      font-size: 12px;
-    }
+@media (max-width: 576px) {
+  .header__text {
+    font-size: 12px;
+  }
 }
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
-  .navbar .container {
-    align-items: end;
-  }
-  .header__logo {
-    height: 140px;
-  }
-  .header__text {
-    font-size: 18px;
-  }
+.navbar .container {
+  align-items: end;
+}
+.header__logo {
+  height: 140px;
+}
+.header__text {
+  font-size: 18px;
+}
 }
 
 // Large devices (desktops, 992px and up)
 @media (max-width: 992px) {
-  .navRow {
-    flex-direction: row;
-    justify-content: space-between;
-  }
+.navRow {
+  flex-direction: row;
+  justify-content: space-between;
+}
 
-  .navbar-toggler {
-    align-self: center;
-  }
+.navbar-toggler {
+  align-self: center;
+}
 
-  .openButtonGroup {
-    position: fixed;
-    right: 18px;
-    bottom: 10px;
-  }
+.openButtonGroup {
+  position: fixed;
+  right: 18px;
+  bottom: 10px;
+}
 
-  .header__buttonConnect {
-    position: fixed;
-    z-index: 2000;
-    flex-direction: column;
-    right: 18px;
-    bottom: 10px;
-    width: fit-content;
-    height: 300px;
-  }
+.header__buttonConnect {
+  position: fixed;
+  z-index: 2000;
+  flex-direction: column;
+  right: 18px;
+  bottom: 10px;
+  width: fit-content;
+  height: 300px;
+}
 }
 
 .bg-telegram {
+background-color: #2AABEE;
+
+&+.btn:active {
   background-color: #2AABEE;
+  border-color:#fff
+}
 }
 
 .bg-phone {
+background-color: grey;
+&+.btn:active {
   background-color: grey;
+  border-color:#fff
+}
 }
 
 
 .bg-whatsUp {
+background-color: #25D366;
+&+.btn:active {
   background-color: #25D366;
+  border-color:#fff
+}
 }
 
+@media (max-width: 576px) {
+.navbar-toggler {
+  display: none;
+}
+}

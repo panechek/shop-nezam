@@ -29,7 +29,7 @@ const Header = () => {
       <Container className='header'>
         <img src={Logo} alt='logo-can' className='header__logo' />
         <Navbar.Brand href="#" className='text-white  align-bottom'>
-          <h1 className='fs-1 fw-bold'>НЕЗАМЕРЗАЙКА</h1>
+          <h1 className='fw-bold'>НЕЗАМЕРЗАЙКА</h1>
           <p className='mb-0 header__text'>продажа оптом доставка по Москве и МО</p>
           </Navbar.Brand>
           <div className={classOfBtnConnection}>

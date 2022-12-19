@@ -7,13 +7,13 @@ const Prices = () => {
     return (
       <section id="prices">
       <Container>
-        <h2 className="section__title text-uppercase">СТЕКЛООМЫВАТЕЛЬ ЗА БЕЗНАЛИЧНЫЙ РАСЧЕТ</h2>
+        <h2 className="section__title text-uppercase">СТЕКЛООМЫВАТЕЛЬ<br />ЗА БЕЗНАЛИЧНЫЙ РАСЧЕТ</h2>
         <div className="prices__table">
           <h3 className="prices__table_title">НЕЗАМЕРЗАЙКА ПЭТ КАНИСТРА 5Л</h3>
-          <table className="table fw-bold">
+          <table className="table text-center">
             <thead>
-              <tr className="bg-primary bg-gradient text-white">
-                <th scope="col">ДОСТАВКА, ШТ</th>
+              <tr className="bg-primary bg-gradient text-white align-top">
+                <th scope="col">ДОСТАВКА,<br />ШТ</th>
                 <th scope="col">-10°C</th>
                 <th scope="col">-20°C</th>
                 <th scope="col">-25°C</th>
@@ -67,10 +67,10 @@ const Prices = () => {
         </div>
         <div className="prices__table">
           <h3 className="prices__table_title">НЕЗАМЕРЗАЙКА ЕВРОКАНИСТРА 5 Л</h3>
-          <table className="table fw-bold">
+          <table className="table text-center">
             <thead>
-              <tr className="bg-primary bg-gradient text-white">
-                <th scope="col">ДОСТАВКА, ШТ</th>
+              <tr className="bg-primary bg-gradient text-white align-top">
+                <th scope="col">ДОСТАВКА,<br />ШТ</th>
                 <th scope="col">ARCTIC FORMULA -30°C</th>
                 <th scope="col">POLAR STREAM -25°C</th>
               </tr>
@@ -106,10 +106,10 @@ const Prices = () => {
         </div>
         <div className="prices__table">
           <h3 className="prices__table_title">ЛЕТНЯЯ ОМЫВАЙКА ПЭТ КАНИСТРА 5 Л</h3>
-          <table className="table fw-bold">
+          <table className="table text-center">
             <thead>
-              <tr className="bg-primary bg-gradient text-white">
-                <th scope="col">ДОСТАВКА, ШТ</th>
+              <tr className="bg-primary bg-gradient text-white align-top">
+                <th scope="col">ДОСТАВКА,<br />ШТ</th>
                 <th scope="col">HUBBA BUBBA</th>
                 <th scope="col">МУХОМОЙ</th>
               </tr>
