@@ -10,7 +10,7 @@ const Footer = () => {
       <h2 className="section__title text-white">контакты</h2>
       <ul className="footer_flex">
         <li>
-          <a href="tel:+79895969456" className="text-white">+7-989-596-94-56</a>
+          <a href="tel:+79265969196" className="text-white">+7-926-596-91-96</a>
         </li>
         <li>
           <a href="mailto:info@незамерзайка.москва" className="text-white">info@незамерзайка.москва</a>
